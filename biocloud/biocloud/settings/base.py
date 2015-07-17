@@ -28,8 +28,8 @@ def get_env_var(key):
 # Application definition
 
 INSTALLED_APPS = (
-    # 'pages',
-    # 'base',
+    'pages',
+    'base',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -23,6 +23,18 @@ DATABASES = {
     }
 }
 
+# Email
+# https://docs.djangoproject.com/en/1.8/topics/email/
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'localhost'
+EMAIL_PORT = 1025
+
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
+EMAIL_USE_TLS = False
+
+
 ALLOWED_HOSTS = []
 
 # Static files (CSS, JavaScript, Images)

@@ -1,6 +1,10 @@
 django >= 1.8, < 1.9
 psycopg2 >= 2.6
+django-registration-redux >= 1.1
+
+## Dev utility
 flake8 >= 2.4
 ipython >=3.2
+
 ## Docs
 sphinx >= 1.3

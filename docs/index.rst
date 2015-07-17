@@ -9,6 +9,7 @@ Contents:
    :maxdepth: 2
 
    install/index
+   design/index
    changelog
 
 Indices and tables

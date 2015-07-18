@@ -34,11 +34,10 @@
 <body>
   <div class="ui stackable menu">
     <div class="ui container">
-      <div class="header item">
+      <a class="header item" href="{% url 'home' %}">
         <img class="logo" src="{% static 'base/pics/logo.png' %}">
         BioCloud
-      </div>
-      <a href="/" class="item">BioCloud</a>
+      </a>
       <a href="/doc" class="item">Doc</a>
       <div href="#" class="ui simple dropdown right item">
         Semantic UI Cheatsheet <i class="dropdown icon"></i>
@@ -81,7 +80,7 @@
         </div>
       </div>
       <div class="ui inverted section divider"></div> -->
-      <img src="{% static 'base/pics/logo.png' %}" class="ui centered small image">
+      <a href="{% url 'home' %}"><img src="{% static 'base/pics/logo.png' %}" class="ui centered tiny image"></a>
       <div class="ui horizontal inverted small divided link list">
         <a class="item" href="#">Site Map</a>
         <a class="item" href="#">Contact Us</a>

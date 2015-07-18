@@ -28,14 +28,14 @@ def get_env_var(key):
 # Application definition
 
 INSTALLED_APPS = (
-    'pages',
-    'base',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'base',
+    'pages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -82,5 +82,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-

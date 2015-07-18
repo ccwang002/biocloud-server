@@ -38,13 +38,25 @@
         <img class="logo" src="{% static 'base/pics/logo.png' %}">
         BioCloud
       </a>
-      <a href="/doc" class="item">Doc</a>
-      <div href="#" class="ui simple dropdown right item">
-        Semantic UI Cheatsheet <i class="dropdown icon"></i>
-        <div class="menu">
-          <a href="/semantic-ui/grid" class="item">Grid</a>
-          <a href="/semantic-ui/bootstrap" class="item">Bootstrap</a>
+      <a href="#" class="item">Doc</a>
+      <div class="right menu">
+        <div class="ui simple dropdown item">
+          Semantic UI Cheatsheet <i class="dropdown icon"></i>
+          <div class="menu">
+            <a href="/semantic-ui/grid" class="item">Grid</a>
+            <a href="/semantic-ui/bootstrap" class="item">Bootstrap</a>
+          </div>
         </div>
+        <form class="item" method="post" action="{% url 'home' %}">
+        {% if user.is_authenticated %}
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% url 'home' %}">
+        <button class="ui red basic button" type="submit">Logout</button>
+        {% else %}
+        <a class="ui left attached basic blue button" href="{% url 'home' %}">Login</a>
+        <a class="ui right attached basic green button" href="{% url 'home' %}">Sign up</a>
+        {% endif %}
+        </form>
       </div>
     </div>
   </div>

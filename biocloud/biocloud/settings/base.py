@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/1.8/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 from django.core.exceptions import ImproperlyConfigured
+from django.core.urlresolvers import reverse_lazy
+
 
 _parent_dir = os.path.dirname
 BASE_DIR = _parent_dir(_parent_dir(_parent_dir(os.path.abspath(__file__))))
@@ -82,3 +84,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+# Account Settings
+LOGIN_REDIRECT_URL = reverse_lazy('home')

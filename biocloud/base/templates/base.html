@@ -47,13 +47,13 @@
             <a href="/semantic-ui/bootstrap" class="item">Bootstrap</a>
           </div>
         </div>
-        <form class="item" method="post" action="{% url 'home' %}">
+        <form class="item" method="post" action="{% url 'logout' %}">
         {% if user.is_authenticated %}
         {% csrf_token %}
         <input type="hidden" name="next" value="{% url 'home' %}">
         <button class="ui red basic button" type="submit">Logout</button>
         {% else %}
-        <a class="ui left attached basic blue button" href="{% url 'home' %}">Login</a>
+        <a class="ui left attached basic blue button" href="{% url 'login' %}">Login</a>
         <a class="ui right attached basic green button" href="{% url 'home' %}">Sign up</a>
         {% endif %}
         </form>

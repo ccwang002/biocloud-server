@@ -9,22 +9,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
   {% block meta %}{% endblock %}
   <title>{% block title %}BioCloud{% endblock title %}</title>
-  <style>
-    .ui.menu .header.item img.logo {
-      margin-right: 0.5em;
-    }
-    .menu-spacer {
-      margin-top: 2em;  /* 4em for exact menubar height */
-    }
-    .ui.footer.vertical.segment {
-      margin-top: 2em;
-    }
-    @media screen and (max-width: 767px) {
-      .menu-spacer {
-        margin-top: 4em;
-      }
-    }
-  </style>
   {% block css %}{% endblock css %}
   {% block headjs %}{% endblock headjs %}
   <link rel="stylesheet" href="{% static 'libs/semantic-ui/semantic.min.css' %}">

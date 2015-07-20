@@ -36,6 +36,8 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'semantic_ui',
+    'crispy_forms',
     'base',
     'pages',
 )
@@ -85,5 +87,12 @@ USE_L10N = True
 
 USE_TZ = True
 
+
 # Account Settings
+
 LOGIN_REDIRECT_URL = reverse_lazy('home')
+
+
+# Crispy Forms
+
+CRISPY_TEMPLATE_PACK = 'semantic_ui'

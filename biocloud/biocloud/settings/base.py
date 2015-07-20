@@ -40,7 +40,8 @@ INSTALLED_APPS = (
     'crispy_forms',
     'base',
     'pages',
-    'semantic_ui_doc'
+    'accounts',
+    'semantic_ui_doc',
 )
 
 MIDDLEWARE_CLASSES = (

@@ -16,11 +16,12 @@ Including another URLconf
 from django.conf.urls import include, url
 from django.contrib import admin
 from pages import views
-
+from accounts import views as account_views
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),
     url(r'^semantic_ui_doc/', include('semantic_ui_doc.urls')),
+    url(r'^accounts/register$', account_views.register, name='register'),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

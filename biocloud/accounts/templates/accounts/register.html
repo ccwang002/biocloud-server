@@ -1,0 +1,22 @@
+{% extends 'accounts/base.html' %}
+{% load crispy_forms_tags %}
+
+{% block body %}
+<div class="ui container">
+  {% if user_form.errors or account_form.errors %}
+    <div class="ui error message">
+      <div class="header">Registration Failed</div>
+      <p>The registration <strong>has not completed</strong>.
+        Please resolve the following errors and submit again.</p>
+    </div>
+  {% endif %}
+
+  <form class="ui form" action="{% url 'register' %}" method="post">
+    {% csrf_token %}
+    {{ user_form|crispy }}
+    {{ account_form|crispy }}
+    <button class="ui button" type="submit">Register</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+  </form>
+</div>
+{% endblock body %}

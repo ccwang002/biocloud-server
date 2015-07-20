@@ -27,8 +27,8 @@
         <div class="ui simple dropdown item">
           Semantic UI Cheatsheet <i class="dropdown icon"></i>
           <div class="menu">
-            <a href="/semantic-ui/grid" class="item">Grid</a>
-            <a href="/semantic-ui/bootstrap" class="item">Bootstrap</a>
+            <a href="{% url 'semantic_ui_grid' %}" class="item">Grid</a>
+            <a href="{% url 'semantic_ui_bootstrap' %}" class="item">Bootstrap</a>
           </div>
         </div>
         <form class="item" method="post" action="{% url 'logout' %}">

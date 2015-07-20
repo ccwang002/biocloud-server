@@ -20,6 +20,7 @@ from pages import views
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),
+    url(r'^semantic_ui_doc/', include('semantic_ui_doc.urls')),
     url(r'^accounts/', include('django.contrib.auth.urls')),
     url(r'^admin/', include(admin.site.urls)),
 ]

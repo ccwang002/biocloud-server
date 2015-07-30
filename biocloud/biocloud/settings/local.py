@@ -1,3 +1,4 @@
+import os.path as op
 from .base import *  # noqa
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -41,3 +42,14 @@ ALLOWED_HOSTS = []
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+# Media settings
+# so media files will be at
+# + biocloud/
+# + docs/
+# + media/
+#     + <-- where media files root
+
+MEDIA_ROOT = os.path.join(op.dirname(BASE_DIR), 'media')
+MEDIA_URL = '/media/'

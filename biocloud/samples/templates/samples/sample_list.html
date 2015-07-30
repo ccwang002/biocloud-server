@@ -1,0 +1,9 @@
+{% extends 'samples/base.html' %}
+
+{% block content %}
+  <ul>
+    {% for sample in owned_samples %}
+    <li>{{ sample.id }} | {{ sample.name }}</li>
+    {% endfor %}
+  </ul>
+{% endblock content %}

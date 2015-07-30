@@ -41,6 +41,7 @@ INSTALLED_APPS = (
     'base',
     'pages',
     'accounts',
+    'samples',
     'semantic_ui_doc',
 )
 

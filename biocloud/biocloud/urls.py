@@ -20,6 +20,7 @@ from accounts import views as account_views
 
 urlpatterns = [
     url(r'^$', views.HomeView.as_view(), name='home'),
+    url(r'^samples/', include('samples.urls')),
     url(r'^semantic_ui_doc/', include('semantic_ui_doc.urls')),
     url(r'^accounts/register$', account_views.register, name='register'),
     url(r'^accounts/', include('django.contrib.auth.urls')),

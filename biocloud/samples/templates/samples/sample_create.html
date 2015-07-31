@@ -2,9 +2,16 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-  <form class="ui form" action="{% url 'sample_create' %}" method="post" enctype="multipart/form-data">
-    {% csrf_token %}
-    {{ form|crispy }}
-    <button class="ui button" type="submit">Upload</button>
-  </form>
+{% if form.errors %}
+  <div class="ui error message">
+    <div class="header">Insufficient information given</div>
+    <p>Please provide enough information.</p>
+  </div>
+{% endif %}
+
+<form class="ui form" action="{% url 'sample_create' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  {{ form|crispy }}
+  <button class="ui button" type="submit">Upload</button>
+</form>
 {% endblock content %}

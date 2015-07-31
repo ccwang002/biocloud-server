@@ -1,32 +1,30 @@
-{% extends "base.html" %}
+{% extends "accounts/base.html" %}
 
 {% load crispy_forms_tags %}
 
-{% block body %}
-<div class="ui container">
-  {% if next %}
-    {% if user.is_authenticated %}
-    <p>Your account doesn't have access to this page. To proceed,
-    please login with an account that has access.</p>
-    {% else %}
-    <p>Please login to see this page.</p>
-    {% endif %}
+{% block container %}
+{% if next %}
+  {% if user.is_authenticated %}
+  <p>Your account doesn't have access to this page. To proceed,
+  please login with an account that has access.</p>
+  {% else %}
+  <p>Please login to see this page.</p>
   {% endif %}
+{% endif %}
 
-  {% if form.errors %}
-  <div class="ui error message">
-    <div class="header">Action Forbidden</div>
-    <p>Your username and password didn't match. Please try again.</p>
-  </div>
-  {% endif %}
-
-  <form class="ui form" action="{% url 'login' %}" method="post">
-      {% csrf_token %}
-      {{ form|crispy }}
-      <button class="ui button" type="submit">Log in</button>
-      <input type="hidden" name="next" value="{{ next }}" />
-  </form>
-  {# Assumes you setup the password_reset view in your URLconf #}
-  <p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+{% if form.errors %}
+<div class="ui error message">
+  <div class="header">Action Forbidden</div>
+  <p>Your username and password didn't match. Please try again.</p>
 </div>
-{% endblock body %}
+{% endif %}
+
+<form class="ui form" action="{% url 'login' %}" method="post">
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button class="ui button" type="submit">Log in</button>
+    <input type="hidden" name="next" value="{{ next }}" />
+</form>
+{# Assumes you setup the password_reset view in your URLconf #}
+<p><a href="{% url 'password_reset' %}">Lost password?</a></p>
+{% endblock container %}

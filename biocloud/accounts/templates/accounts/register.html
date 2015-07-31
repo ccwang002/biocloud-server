@@ -1,8 +1,7 @@
 {% extends 'accounts/base.html' %}
 {% load crispy_forms_tags %}
 
-{% block body %}
-<div class="ui container">
+{% block container %}
   {% if user_form.errors or account_form.errors %}
     <div class="ui error message">
       <div class="header">Registration Failed</div>
@@ -18,5 +17,4 @@
     <button class="ui button" type="submit">Register</button>
     <input type="hidden" name="next" value="{{ next }}" />
   </form>
-</div>
-{% endblock body %}
+{% endblock container %}

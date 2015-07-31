@@ -88,7 +88,9 @@ class RenameFilesModel(models.Model):
 class Sample(RenameFilesModel):
 
     id = models.UUIDField(primary_key=True, default=uuid.uuid4, editable=False)
-    name = models.CharField(max_length=2048)
+    name = models.CharField(max_length=2048, help_text=(
+        'Name of the sample. Max 2048 characters'
+    ))
     owner = models.ForeignKey(settings.AUTH_USER_MODEL, related_name='owned_samples')
 
     def upload_to(self, filename):

@@ -23,6 +23,13 @@
         BioCloud
       </a>
       <a href="#" class="item">Doc</a>
+      <div class="ui simple dropdown item">
+        Samples <i class="dropdown icon"></i>
+        <div class="menu">
+          <a href="{% url 'sample_list' %}" class="item">List</a>
+          <a href="{% url 'sample_create' %}" class="item">Upload</a>
+        </div>
+      </div>
       <div class="right menu">
         <div class="ui simple dropdown item">
           Semantic UI Cheatsheet <i class="dropdown icon"></i>

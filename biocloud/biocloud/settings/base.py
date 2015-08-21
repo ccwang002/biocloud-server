@@ -43,6 +43,7 @@ INSTALLED_APPS = (
     'accounts',
     'samples',
     'semantic_ui_doc',
+    'play_form',
 )
 
 MIDDLEWARE_CLASSES = (

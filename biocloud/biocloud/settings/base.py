@@ -99,3 +99,4 @@ LOGIN_REDIRECT_URL = reverse_lazy('home')
 # Crispy Forms
 
 CRISPY_TEMPLATE_PACK = 'semantic_ui'
+CRISPY_ALLOWED_TEMPLATE_PACKS = ('semantic_ui', 'bootstrap3')

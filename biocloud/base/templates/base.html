@@ -32,11 +32,12 @@
       </div>
       <div class="right menu">
         <div class="ui simple dropdown item">
-          Dev
+          Dev <i class="dropdown icon"></i>
           <div class="menu">
             <a href="{% url 'semantic_ui_grid' %}" class="item">SemanticUI Grid</a>
             <a href="{% url 'semantic_ui_bootstrap' %}" class="item">SemanticUI Bootstrap</a>
             <a href="{% url 'example_form' %}" class="item">Example Form</a>
+            <a href="{% url 'example_multiform' %}" class="item">Example MultiForm</a>
           </div>
         </div>
         <form class="item" method="post" action="{% url 'logout' %}">

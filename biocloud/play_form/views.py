@@ -17,3 +17,7 @@ def example_form(request):
     return render(request, 'play_form/example_form.html', {
         'form': form
     })
+
+def example_multiform(request):
+    logger.info('Multiform')
+    return redirect('home')

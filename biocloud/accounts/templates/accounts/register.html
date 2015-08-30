@@ -2,6 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block container %}
+  <h1>Sign up</h1>
   {% if user_form.errors or account_form.errors %}
     <div class="ui error message">
       <div class="header">Registration Failed</div>
@@ -10,10 +11,10 @@
     </div>
   {% endif %}
 
-  <form class="ui form" action="{% url 'register' %}" method="post">
+  <form class="ui form error" action="{% url 'register' %}" method="post">
     {% csrf_token %}
-    {{ user_form|crispy }}
-    {{ account_form|crispy }}
+    {% crispy user_form user_form.helper 'semantic_ui' %}
+    {% crispy account_form account_form.helper 'semantic_ui' %}
     <button class="ui button" type="submit">Register</button>
     <input type="hidden" name="next" value="{{ next }}" />
   </form>

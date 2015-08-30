@@ -4,34 +4,34 @@ from crispy_forms.layout import Submit
 
 class ExampleForm(forms.Form):
     like_website = forms.TypedChoiceField(
-        label = "Do you like this website?",
-        choices = ((1, "Yes"), (0, "No")),
-        coerce = lambda x: bool(int(x)),
-        widget = forms.RadioSelect,
-        initial = '1',
-        required = True,
+        label="Do you like this website?",
+        choices=((1, "Yes"), (0, "No")),
+        coerce=lambda x: bool(int(x)),
+        widget=forms.RadioSelect,
+        initial='1',
+        required=True,
     )
 
     favorite_food = forms.CharField(
-        label = "What is your favorite food?",
-        max_length = 80,
-        required = True,
+        label="What is your favorite food?",
+        max_length=80,
+        required=True,
     )
 
     favorite_color = forms.CharField(
-        label = "What is your favorite color?",
-        max_length = 80,
-        required = True,
+        label="What is your favorite color?",
+        max_length=80,
+        required=True,
     )
 
     favorite_number = forms.IntegerField(
-        label = "Favorite number",
-        required = False,
+        label="Favorite number",
+        required=False,
     )
 
     notes = forms.CharField(
-        label = "Additional notes or feedback",
-        required = False,
+        label="Additional notes or feedback",
+        required=False,
     )
 
     def __init__(self, *args, **kwargs):
@@ -60,5 +60,5 @@ class ExampleForm(forms.Form):
     def clean_favorite_color(self):
         data = self.cleaned_data['favorite_color']
         if data and not data == 'Red':
-            raise forms.ValidationError('Should always be red.')
+            raise forms.ValidationError('Should always be Red.')
         return data
